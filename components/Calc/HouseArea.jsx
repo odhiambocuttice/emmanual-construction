@@ -26,7 +26,7 @@ export const HouseArea = () => {
   }
 
   return (
-    <div className="flex justify-center items-center my-4 w-full">
+    <div className="flex justify-center items-center my-4 w-3/4">
       <div className="w-full rounded p-4 px-2  bg-gradient-to-r from-gray-700 to-gray-400 ">
         <button className="uppercase" onClick={() => setOpen(!open)}>
           calculate total area of house
@@ -34,7 +34,7 @@ export const HouseArea = () => {
       </div>
 
       {open && (
-        <div className="fixed inset-0 z-50 overflow-auto ">
+        <div className="fixed inset-0 z-[100] overflow-auto ">
           <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
             <div className="fixed inset-0 transition-opacity">
               <div className="absolute inset-0 bg-gray-500 opacity-75"></div>

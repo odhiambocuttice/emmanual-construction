@@ -53,23 +53,14 @@ export const CountySelect = () => {
   };
 
   return (
-    <motion.div
-      initial="initial"
-      animate="animate"
-      exit={{ opacity: 0 }}
-      className=""
-    >
-      <motion.div variants={fadeInUp} className="w-full z-50">
-        <Select
-          options={countiesOfKenya}
-          placeholder="Select County"
-          isClearable={true}
-          isSearchable={true}
-          styles={customStyles}
-          className="text-lg font-light uppercase "
-          onChange={handleChange}
-        />
-      </motion.div>
-    </motion.div>
+    <Select
+      options={countiesOfKenya}
+      placeholder="Select County"
+      isClearable={true}
+      isSearchable={true}
+      styles={customStyles}
+      className="text-sm font-light uppercase w-3/4 z-[99]"
+      onChange={handleChange}
+    />
   );
 };

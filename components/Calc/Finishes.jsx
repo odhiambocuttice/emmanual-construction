@@ -34,42 +34,15 @@ export const Finishes = () => {
     setFinishes(e);
   };
 
-  let easing = [0.6, -0.05, 0.01, 0.99];
-
-  const fadeInUp = {
-    initial: {
-      y: 60,
-      opacity: 0,
-      transition: { duration: 0.8, ease: easing },
-    },
-    animate: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: easing,
-      },
-    },
-  };
-
   return (
-    <motion.div
-      initial="initial"
-      animate="animate"
-      exit={{ opacity: 0 }}
-      className="my-4 w-full "
-    >
-      <motion.div variants={fadeInUp} className="w-full z-20 ">
-        <Select
-          options={finishesTypes}
-          placeholder="Select Finishes Type"
-          isClearable={true}
-          isSearchable={true}
-          styles={customStyles}
-          className="uppercase w-full z-20"
-          onChange={handleChange}
-        />
-      </motion.div>
-    </motion.div>
+    <Select
+      options={finishesTypes}
+      placeholder="Select Finishes Type"
+      isClearable={true}
+      isSearchable={true}
+      styles={customStyles}
+      className="text-sm font-light uppercase w-3/4 z-[98] my-4 "
+      onChange={handleChange}
+    />
   );
 };

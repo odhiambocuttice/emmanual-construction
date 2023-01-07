@@ -8,7 +8,7 @@ const ProjectDetails = ({ id }) => {
   const project = ProjectsData.find((item) => item.category === id);
 
   return (
-    <div className="flex justify-center flex-col bg-black rounded-lg">
+    <div className="flex justify-center flex-col bg-gradient-to-r from-gray-900 to-slate-600 rounded-lg">
       <Image
         src={`/${project.id}.jpg`}
         alt={id}

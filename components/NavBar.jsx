@@ -22,7 +22,7 @@ export const Navbar = () => {
   }, []);
 
   const navstyles = {
-    true: "bg-black top-0 ",
+    true: "bg-gray-800 top-0 ",
     false: "bg-transparent border-b-2",
   };
 
@@ -32,7 +32,10 @@ export const Navbar = () => {
     >
       <div className="max-w-5xl flex-col gap-x-14 ">
         <Link href="/">
-          <h3 className=" text-gray-500">Emmanuel Otieno</h3>
+          <h3 className=" text-gray-400 ">
+            MiniHomes {}
+            <span className="text-xs  text-gray-600">by Emmanuel Otieno</span>
+          </h3>
         </Link>
 
         <div className="flex flex-row items-center justify-between gap-x-52">

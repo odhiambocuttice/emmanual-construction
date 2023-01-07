@@ -34,50 +34,16 @@ export const RoofType = () => {
     setRoofType(e);
   };
 
-  let easing = [0.6, -0.05, 0.01, 0.99];
-
-  const stagger = {
-    animate: {
-      transition: {
-        staggerChildren: 0.05,
-      },
-    },
-  };
-
-  const fadeInUp = {
-    initial: {
-      y: 60,
-      opacity: 0,
-      transition: { duration: 0.8, ease: easing },
-    },
-    animate: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: easing,
-      },
-    },
-  };
 
   return (
-    <motion.div
-      initial="initial"
-      animate="animate"
-      exit={{ opacity: 0 }}
-      className=""
-    >
-      <motion.div variants={fadeInUp} className="w-full -z-50">
-        <Select
-          options={roofTypes}
-          placeholder="Select Roof Type"
-          isClearable={true}
-          isSearchable={true}
-          styles={customStyles}
-          className="uppercase -z-50"
-          onChange={handleChange}
-        />
-      </motion.div>
-    </motion.div>
+    <Select
+      options={roofTypes}
+      placeholder="Select Roof Type"
+      isClearable={true}
+      isSearchable={true}
+      styles={customStyles}
+      className="uppercase text-sm font-light w-3/4 z-50 "
+      onChange={handleChange}
+    />
   );
 };
