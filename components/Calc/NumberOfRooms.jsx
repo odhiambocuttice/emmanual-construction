@@ -10,7 +10,7 @@ export const NumberOfRooms = () => {
 
   return (
     <motion.div
-      className="flex p-2 gap-8 items-center rounded bg-white w-3/4 text-sm text-center"
+      className="flex p-2 gap-8 items-center rounded bg-white w-full text-sm text-center"
       layout
     >
       <h1

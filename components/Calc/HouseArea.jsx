@@ -23,7 +23,7 @@ export const HouseArea = () => {
 
   return (
     <motion.div
-      className=" text-black flex justify-center uppercase items-center my-4 w-3/4 flex-col bg-white rounded-md p-2 text-center text-sm"
+      className=" text-black flex justify-center uppercase items-center my-4 w-full flex-col bg-white rounded-md p-2 text-center text-sm"
       layout
     >
       <h1

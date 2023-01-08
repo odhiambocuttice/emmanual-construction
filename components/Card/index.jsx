@@ -7,7 +7,7 @@ const Card = () => {
   return (
     <div className="flex justify-around items-center flex-wrap">
       {ProjectsData.map((item, idx) => (
-        <li key={idx} className="card list-none">
+        <li key={idx} className="card list-none ">
           <div className="h-full overflow-hidden relative rounded-xl">
             <Link
               key={item.id}

@@ -30,7 +30,7 @@ export const Navbar = () => {
     <nav
       className={`flex z-[999] uppercase items-center justify-center w-full sticky py-4 ${navstyles[isScrolled]}`}
     >
-      <div className="max-w-5xl flex-col gap-x-14 ">
+      <div className="max-w-5xl flex-col lg:gap-x-14 gap-x-0 lg:text-left md:text-center text-center">
         <Link href="/">
           <h3 className=" text-gray-400 ">
             MiniHomes {}
@@ -38,7 +38,7 @@ export const Navbar = () => {
           </h3>
         </Link>
 
-        <div className="flex flex-row items-center justify-between gap-x-52">
+        <div className="flex flex-row items-center justify-between lg:gap-x-52 gap-x-4">
           <div className="text-xs font-black">
             <Link href="/" className="mr-8">
               <span>projects</span>

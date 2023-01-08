@@ -41,7 +41,7 @@ export const Finishes = () => {
       isClearable={true}
       isSearchable={true}
       styles={customStyles}
-      className="text-sm font-light uppercase w-3/4 z-[98] my-4 "
+      className="text-sm font-light uppercase w-full z-[98] my-4 "
       onChange={handleChange}
     />
   );

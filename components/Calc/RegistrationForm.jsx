@@ -13,7 +13,7 @@ export const RegistrationForm = () => {
   const { onSubmit } = useContext(DataContext);
 
   return (
-    <div className=" rounded-xl  bg-gray-100 my-6 w-full">
+    <div className=" rounded-xl  bg-gray-100 my-6 w-full ">
       <h1 className="uppercase text-gray-600 text-center py-4 border-b-2 border-black mx-6 text-xs ">
         Identification Details
       </h1>
@@ -26,7 +26,7 @@ export const RegistrationForm = () => {
           Please fill out your details below so that we can get back to you.
         </p>
         {/* Name input section */}
-        <div className="my-2 w-full ml-20">
+        <div className="my-2 w-full ">
           <div className="absolute p-4 bg-gradient-to-r from-gray-900 to-slate-600  rounded-l-md">
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
               <path d="M20.822 18.096c-3.439-.794-6.64-1.49-5.09-4.418 4.72-8.912 1.251-13.678-3.732-13.678-5.082 0-8.464 4.949-3.732 13.678 1.597 2.945-1.725 3.641-5.09 4.418-3.073.71-3.188 2.236-3.178 4.904l.004 1h23.99l.004-.969c.012-2.688-.092-4.222-3.176-4.935z" />
@@ -36,7 +36,7 @@ export const RegistrationForm = () => {
             type="text"
             name="name"
             id="name"
-            className="bg-white border-none block px-16 py-3 rounded-md uppercase w-[80%] text-black"
+            className="bg-white border-none block px-16 py-3 rounded-md uppercase w-full text-black"
             placeholder="Full name"
             autoComplete="off"
             {...register("name", {
@@ -65,7 +65,7 @@ export const RegistrationForm = () => {
           )}
         </div>
         {/* Email input section */}
-        <div className="my-2 w-full ml-20">
+        <div className="my-2 w-full ">
           <div className="absolute p-4 bg-gradient-to-r from-gray-900 to-slate-600  rounded-l-md">
             <svg
               className="w-4 h-4"
@@ -81,7 +81,7 @@ export const RegistrationForm = () => {
             type="text"
             name="email"
             id="email"
-            className="bg-white  border-none block px-16 py-3 rounded-md w-[80%] "
+            className="bg-white text-black  border-none block px-16 py-3 rounded-md w-full"
             placeholder="EMAIL ADDRESS"
             {...register("email", {
               required: true,
@@ -98,7 +98,7 @@ export const RegistrationForm = () => {
           )}
         </div>
         {/* Phone Number input section */}
-        <div className="my-2 w-full ml-20">
+        <div className="my-2 w-full">
           <div className="absolute p-4 bg-gradient-to-r from-gray-900 to-slate-600 rounded-l-md">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -121,7 +121,7 @@ export const RegistrationForm = () => {
             // value={phoneNumber}
             onChange={(e) => setPhoneNumber(e.target.value)}
             autoComplete="off"
-            className="bg-white  border-none block px-16 py-3 rounded-md uppercase w-[80%] text-black "
+            className="bg-white  border-none block px-16 py-3 rounded-md uppercase w-full text-black "
             placeholder="0700-254-254"
             {...register("phone_number", {
               required: {

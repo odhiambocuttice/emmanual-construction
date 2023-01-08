@@ -14,7 +14,7 @@ const ProjectDetails = ({ id }) => {
         alt={id}
         width={800}
         height={400}
-        className=" rounded-t-lg"
+        className="rounded-t-lg"
       />
       <div className="p-8 ">
         <Title title={project.title} category={project.category} />

@@ -7,7 +7,7 @@ export default function Home() {
   let router = useRouter();
 
   return (
-    <div className="z-10">
+    <div>
       {router.query.id && (
         <Modal
           onClose={() => {

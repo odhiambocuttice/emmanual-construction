@@ -42,7 +42,7 @@ export const RoofType = () => {
       isClearable={true}
       isSearchable={true}
       styles={customStyles}
-      className="uppercase text-sm font-light w-3/4 z-50 "
+      className="uppercase text-sm font-light w-full z-50 "
       onChange={handleChange}
     />
   );

@@ -59,7 +59,7 @@ export const CountySelect = () => {
       isClearable={true}
       isSearchable={true}
       styles={customStyles}
-      className="text-sm font-light uppercase w-3/4 z-[99]"
+      className="text-sm font-light uppercase w-full z-[99] border-none"
       onChange={handleChange}
     />
   );
