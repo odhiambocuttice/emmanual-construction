@@ -1,7 +1,5 @@
 import { useState, useContext, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { faHouseCircleExclamation } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { DataContext } from "../../context/DataContext";
 

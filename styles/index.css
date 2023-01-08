@@ -13,7 +13,6 @@ body {
   font-family: 'Montserrat', sans-serif;
   @apply bg-gradient-to-r from-gray-900 to-slate-600;
   color: #f5f5dc;
-  /* overflow: hidden; */
 }
 
 .modal-overlay {
@@ -29,7 +28,6 @@ body {
 .card {
   @apply  p-6 relative;
   height: 360px;
-  /* flex-basis: 40%; */
   width: 40%;
 }
 
