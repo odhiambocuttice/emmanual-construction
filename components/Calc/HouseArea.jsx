@@ -1,4 +1,5 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { faHouseCircleExclamation } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -18,115 +19,88 @@ export const HouseArea = () => {
     setFloors,
   } = useContext(DataContext);
 
-  function calculateTotal() {
+  useEffect(() => {
     setHouseArea(height * width * floors);
-    setTimeout(() => {
-      setOpen(false);
-    }, 3000);
-  }
+  }, [height, width, floors, setHouseArea]);
 
   return (
-    <div className="flex justify-center items-center my-4 w-3/4">
-      <div className="w-full rounded p-4 px-2  bg-gradient-to-r from-gray-700 to-gray-400 ">
-        <button className="uppercase" onClick={() => setOpen(!open)}>
-          calculate total area of house
-        </button>
-      </div>
+    <motion.div
+      className=" text-black flex justify-center uppercase items-center my-4 w-3/4 flex-col bg-white rounded-md p-2 text-center text-sm"
+      layout
+    >
+      <h1
+        className="uppercase w-full cursor-pointer text-gray-600"
+        onClick={() => setOpen(!open)}
+      >
+        calculate total area of house
+      </h1>
 
-      {open && (
-        <div className="fixed inset-0 z-[100] overflow-auto ">
-          <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-            <div className="fixed inset-0 transition-opacity">
-              <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
-            </div>
-            <span className="hidden sm:inline-block sm:align-middle sm:h-screen"></span>
-            <div
-              className="inline-block align-bottom bg-[#F4F7FA] rounded-lg shadow-xl transform transition-all sm:align-middle"
-              role="dialog"
-              aria-modal="true"
-              aria-labelledby="modal-headline"
-            >
-              <div className="bg-[#F4F7FA] px-4 rounded-xl">
-                <div className="flex items-center justify-center ">
-                  <div className="absolute top-[-40px] mx-auto rounded-full  bg-gradient-to-r from-gray-700 to-gray-400 flex-shrink-0 flex items-center justify-center h-20 w-20 ">
-                    <FontAwesomeIcon
-                      className="h-10 w-10 text-gray-900"
-                      icon={faHouseCircleExclamation}
-                    />
-                  </div>
-                  <h3
-                    className="text-gray-900 mt-10 uppercase"
-                    id="modal-headline"
-                  >
-                    Calculate the total area of your house
-                  </h3>
-                </div>
-                <div className="mt-3 text-center text-black">
-                  <div className="flex items-center justify-start flex-col">
-                    <div className="flex p-2 justify-start items-center ml-12 ">
-                      <h1 className="px-3">Number of Floors:</h1>
-                      <input
-                        type="number"
-                        className="p-2 border-2 border-slate-600 rounded-md w-1/4 text-center"
-                        value={floors}
-                        onChange={(e) => setFloors(e.target.value)}
-                        placeholder="0"
-                      />
-                    </div>
+      <AnimatePresence>
+        {open && (
+          <AreaCalculation
+            HouseArea={HouseArea}
+            setHeight={setHeight}
+            setWidth={setWidth}
+            setFloors={setFloors}
+            floors={floors}
+            height={height}
+            width={width}
+          />
+        )}
+      </AnimatePresence>
+    </motion.div>
+  );
+};
 
-                    <div className="flex p-2 justify-center items-center">
-                      <h1 className="px-3">Width:</h1>
-                      <input
-                        type="number"
-                        className="p-2 border-2 border-slate-600 rounded-md w-1/3 text-center"
-                        value={width}
-                        onChange={(e) => setWidth(e.target.value)}
-                        placeholder="0"
-                      />
-                    </div>
-
-                    <div className="flex p-2 justify-center items-center">
-                      <h1 className="px-2">Length:</h1>
-                      <input
-                        type="number"
-                        className="p-2 border-2 border-gray-900 rounded-md w-1/3 text-center"
-                        value={height}
-                        onChange={(e) => setHeight(e.target.value)}
-                        placeholder="0"
-                      />
-                    </div>
-
-                    <div className="p-2 w-full rounded-xl flex justify-center items-center ml-4">
-                      <h1 className="px-3">Total Area:</h1>
-                      <p className="border-2 border-gray-900 rounded-md text-center p-2 w-1/3 bg-white">
-                        {HouseArea} m²
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                    <button
-                      type="button"
-                      className="mt-3 w-full inline-flex justify-center rounded-full  border px-4 py-2 bg-white text-base font-medium border-gray-900 text-black  sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
-                      onClick={() => setOpen(false)}
-                    >
-                      Cancel
-                    </button>
-
-                    <button
-                      type="button"
-                      className="w-full inline-flex justify-center rounded-full border shadow-sm px-4 py-2 my-2 lg:my-0 bg-gradient-to-r from-gray-700 to-gray-400 border-gray-900 text-base font-medium text-black"
-                      onClick={calculateTotal}
-                    >
-                      Add
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+const AreaCalculation = ({
+  HouseArea,
+  setHeight,
+  setWidth,
+  setFloors,
+  floors,
+  height,
+  width,
+}) => {
+  return (
+    <motion.div
+      layout
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="border-t-2 my-2 w-full"
+    >
+      <div className="flex my-2 justify-center items-center text-right">
+        <div className="flex flex-col gap-6">
+          <h1 className="">No of Floors :</h1>
+          <h1 className="">Width :</h1>
+          <h1 className="">Length :</h1>
         </div>
-      )}
-    </div>
+
+        <div className="flex flex-col p-2 justify-center items-center">
+          <input
+            type="number"
+            className="p-2 border-2 border-slate-600 rounded-md w-16 my-2 text-center"
+            value={floors}
+            onChange={(e) => setFloors(e.target.value)}
+            placeholder="0"
+          />
+          <input
+            type="number"
+            className="p-2 border-2 border-slate-600 rounded-md w-16 mb-2 text-center"
+            value={width}
+            onChange={(e) => setWidth(e.target.value)}
+            placeholder="0"
+          />
+          <input
+            type="number"
+            className="p-2 border-2 border-slate-600 rounded-md w-16  text-center"
+            value={height}
+            onChange={(e) => setHeight(e.target.value)}
+            placeholder="0"
+          />
+        </div>
+        <p className="text-red-600 text-center p-2 w-1/4">{HouseArea} m²</p>
+      </div>
+    </motion.div>
   );
 };

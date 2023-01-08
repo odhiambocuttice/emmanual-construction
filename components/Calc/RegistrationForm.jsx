@@ -14,7 +14,7 @@ export const RegistrationForm = () => {
 
   return (
     <div className=" rounded-xl  bg-gray-100 my-6 w-full">
-      <h1 className="uppercase text-gray-900 text-center py-4 border-b-2 border-black mx-6">
+      <h1 className="uppercase text-gray-600 text-center py-4 border-b-2 border-black mx-6 text-xs ">
         Identification Details
       </h1>
       <form

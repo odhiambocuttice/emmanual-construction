@@ -28,7 +28,7 @@ export const Navbar = () => {
 
   return (
     <nav
-      className={`flex uppercase items-center justify-center w-full sticky z-30 py-4 ${navstyles[isScrolled]}`}
+      className={`flex z-[999] uppercase items-center justify-center w-full sticky py-4 ${navstyles[isScrolled]}`}
     >
       <div className="max-w-5xl flex-col gap-x-14 ">
         <Link href="/">
