@@ -33,7 +33,7 @@ export const Navbar = () => {
       <div className="max-w-5xl flex-col lg:gap-x-14 gap-x-0 lg:text-left md:text-center text-center">
         <Link href="/">
           <h3 className=" text-gray-400 ">
-            MiniHomes {}
+            Minioms {}
             <span className="text-xs  text-gray-600">by Emmanuel Otieno</span>
           </h3>
         </Link>
