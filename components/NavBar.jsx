@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 
 import { Avatar } from "react-lorem-ipsum";
+import Image from "next/image";
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -49,7 +50,14 @@ export const Navbar = () => {
             </Link>
           </div>
 
-          <Avatar className="h-8 w-8 rounded-full" />
+          <div className="h-9 w-9 relative ">
+            <Image
+              src="/MINIOMS_LOGO.jpg"
+              alt="Minioms Logo"
+              className=" object-cover rounded-full"
+              fill
+            />
+          </div>
         </div>
       </div>
     </nav>

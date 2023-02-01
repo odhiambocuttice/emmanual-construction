@@ -1,11 +1,7 @@
 import Image from "next/image";
 
 const ProjectPicture = ({ id }) => {
-  return (
-    <div className="">
-      <Image src={`/${id}.jpg`} alt={id} fill />
-    </div>
-  );
+  return <Image src={`/${id}.jpg`} alt={id} fill className="object-cover" />;
 };
 
 export default ProjectPicture;
