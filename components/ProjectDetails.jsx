@@ -8,9 +8,9 @@ const ProjectDetails = ({ id }) => {
   const slides = project.images;
 
   return (
-    <div className="flex justify-center items-center bg-gradient-to-r from-gray-900 to-slate-600 rounded-lg mt-3 lg:w-full w-[55%] flex-col lg:flex-row">
+    <div className="flex justify-center items-center lg:bg-gradient-to-r from-gray-900 to-slate-600 rounded-lg mt-8 lg:w-full  flex-col lg:flex-row bg-none">
       <ImageSlide images={slides} />
-      <div className="lg:mx-6 lg:max-w-xs mx-0 w-[400px]">
+      <div className="lg:mx-6 lg:max-w-xs mx-0 w-[350px]">
         <Title title={project.title} category={project.category} />
       </div>
     </div>

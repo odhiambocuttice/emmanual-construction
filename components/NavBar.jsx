@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
-import { Avatar } from "react-lorem-ipsum";
 import Image from "next/image";
 
 export const Navbar = () => {
@@ -29,13 +28,15 @@ export const Navbar = () => {
 
   return (
     <nav
-      className={`flex z-[999] uppercase items-center justify-center w-full sticky py-4 ${navstyles[isScrolled]}`}
+      className={`flex z-[999] uppercase items-center justify-center w-full sticky py-1 ${navstyles[isScrolled]}`}
     >
       <div className="max-w-5xl flex-col lg:gap-x-14 gap-x-0 lg:text-left md:text-center text-center">
         <Link href="/">
-          <h3 className=" text-gray-400 ">
+          <h3 className=" text-gray-300 ">
             Minioms {}
-            <span className="text-xs  text-gray-600">by Emmanuel Otieno</span>
+            <span className="text-[10px] font-thin  text-gray-500">
+              by Emmanuel Otieno
+            </span>
           </h3>
         </Link>
 
@@ -50,11 +51,11 @@ export const Navbar = () => {
             </Link>
           </div>
 
-          <div className="h-9 w-9 relative ">
+          <div className="lg:h-9 lg:w-9 relative h-4 w-5">
             <Image
               src="/MINIOMS_LOGO.jpg"
               alt="Minioms Logo"
-              className=" object-cover rounded-full"
+              className="object-cover rounded-full"
               fill
             />
           </div>

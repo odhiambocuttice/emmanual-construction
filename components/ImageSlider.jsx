@@ -13,31 +13,29 @@ const ImageSlide = ({ images }) => {
   };
 
   return (
-    <div className="flex lg:h-[70vh] lg:w-[500px] relative h-[400px] w-[400px]">
-      <div className="">
-        <Image
-          src={images[currentIndex]}
-          alt="DESIGN CONCEPTS"
-          fill
-          className="object-contain "
-        />
+    <div className="flex lg:h-auto lg:w-[500px] relative  w-[400px] h-[60vh] items-center justify-center">
+      <img
+        src={images[currentIndex]}
+        alt="DESIGN CONCEPTS"
+        fill
+        className="h-full lg:rounded-l-lg rounded-lg"
+      />
 
-        <div className="flex justify-between absolute top-1/2 lg:gap-[420px] gap-[320px]">
-          <button
-            className="lg:bg-gradient-to-r from-gray-900 to-slate-600 text-white font-bold h-10 w-10 rounded-full"
-            onClick={handlePreviousClick}
-            title="Previous Render"
-          >
-            ❰
-          </button>
-          <button
-            className="bg-gradient-to-r from-gray-900 to-slate-600 text-white font-bold h-10 w-10 rounded-full"
-            onClick={handleNextClick}
-            title="Next Render"
-          >
-            ❱
-          </button>
-        </div>
+      <div className="flex justify-between absolute top-1/2 lg:gap-[420px] gap-[300px]">
+        <button
+          className="bg-gradient-to-r from-gray-900 to-slate-600 text-white font-bold h-10 w-10 rounded-full"
+          onClick={handlePreviousClick}
+          title="Previous Render"
+        >
+          ❰
+        </button>
+        <button
+          className="bg-gradient-to-r from-gray-900 to-slate-600 text-white font-bold h-10 w-10 rounded-full"
+          onClick={handleNextClick}
+          title="Next Render"
+        >
+          ❱
+        </button>
       </div>
     </div>
   );
